@@ -1,8 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/Header.css";
 import logo from "../assets/Logo.png";
 import { Link } from "react-router-dom";
+import CartDropdown from "./CartDropdown";
 function Header() {
+  const [cartItems, setCartItems] = useState(
+    JSON.parse(localStorage.getItem("cart")) || []
+  );
+
+  useEffect(() => {
+    // Listen for changes in localStorage
+    const updateCartItems = () => {
+      const storedCartItems = JSON.parse(localStorage.getItem("cart")) || [];
+      setCartItems(storedCartItems);
+    };
+
+    // Initial load
+    updateCartItems();
+
+    // Add event listener for localStorage changes
+    window.addEventListener("storage", updateCartItems);
+
+    // Clean up the listener on component unmount
+    return () => window.removeEventListener("storage", updateCartItems);
+  }, []);
+
+  const handleRemoveFromCart = (itemId) => {
+    const updatedCart = cartItems.filter((item) => item.id !== itemId);
+    setCartItems(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+  };
   return (
     <div className="header">
       <div className="logo">
@@ -34,9 +61,13 @@ function Header() {
           <i className="fa-regular fa-heart"></i>
         </li>
         <li>
-          <Link to="/cart">
+          <div className="cart-container">
             <i className="fa-solid fa-cart-shopping"></i>
-          </Link>
+            <CartDropdown
+              cartItems={cartItems}
+              onRemove={handleRemoveFromCart}
+            />
+          </div>
         </li>
       </ul>
     </div>
