@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-function ProductSize({ sizes }) {
-  const [selectedSize, setSelectedSize] = useState(null);
-
+function ProductSize({ sizes, selectedSize, setSelectedSize }) {
   return (
     <div>
       <p style={{ color: "#9F9F9F" }}>Size</p>

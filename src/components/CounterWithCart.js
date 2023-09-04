@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import CartContext from "./CartContext";
 
-function CounterWithCart({ product }) {
+function CounterWithCart({ product, selectedSize, selectedColor }) {
+  const { addProduct } = useContext(CartContext);
+
   const [count, setCount] = useState(1);
 
   const handleIncrement = () => {
@@ -14,26 +17,14 @@ function CounterWithCart({ product }) {
   };
 
   const handleAddToCart = () => {
-    let cart = localStorage.getItem("cart");
-    if (cart) {
-      cart = JSON.parse(cart);
-    } else {
-      cart = [];
-    }
-
-    // Check if product is already in cart
-    const existingProduct = cart.find((item) => item.id === product.id);
-    if (existingProduct) {
-      existingProduct.quantity += count;
-    } else {
-      product.quantity = count;
-      cart.push(product);
-    }
-
-    localStorage.setItem("cart", JSON.stringify(cart));
-    alert(`Added ${count} items of ${product.name} to the cart!`);
+    const productToAdd = {
+      ...product,
+      size: selectedSize,
+      color: selectedColor ? [selectedColor] : [],
+      quantity: count,
+    };
+    addProduct(productToAdd);
   };
-
   return (
     <div
       style={{

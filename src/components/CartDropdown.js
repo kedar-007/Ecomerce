@@ -1,52 +1,57 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
+import CartContext from "./CartContext";
 
-function CartDropdown({ cartItems, onRemove }) {
+function CartDropdown() {
+  const { cartItems, setCartItems, removeProduct } = useContext(CartContext);
+
+  useEffect(() => {
+    const handleStorageChange = (e) => {
+      if (e.key === "cart") {
+        const updatedCart = JSON.parse(localStorage.getItem("cart") || "[]");
+        setCartItems(updatedCart);
+      }
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
+  }, [setCartItems]);
+
   const totalQuantity = cartItems.reduce(
     (total, item) => total + item.quantity,
     0
   );
+
   const totalPrice = cartItems.reduce(
     (total, item) => total + item.quantity * item.cost,
     0
   );
 
-  const [quantities, setQuantities] = useState(
-    cartItems.map((item) => ({ id: item.id, quantity: item.quantity }))
-  );
-
   const increaseQuantity = (id) => {
-    const newQuantities = quantities.map((q) => {
-      if (q.id === id) q.quantity += 1;
-      return q;
-    });
-    setQuantities(newQuantities);
-
     const updatedCart = cartItems.map((item) => {
-      const matchingQuantityObj = newQuantities.find((q) => q.id === item.id);
-      if (matchingQuantityObj) {
-        item.quantity = matchingQuantityObj.quantity;
+      if (item.id === id) {
+        return { ...item, quantity: item.quantity + 1 };
       }
       return item;
     });
+
     localStorage.setItem("cart", JSON.stringify(updatedCart));
+    setCartItems(updatedCart);
   };
 
   const decreaseQuantity = (id) => {
-    const newQuantities = quantities.map((q) => {
-      if (q.id === id && q.quantity > 1) q.quantity -= 1;
-      return q;
-    });
-    setQuantities(newQuantities);
-
     const updatedCart = cartItems.map((item) => {
-      const matchingQuantityObj = newQuantities.find((q) => q.id === item.id);
-      if (matchingQuantityObj) {
-        item.quantity = matchingQuantityObj.quantity;
+      if (item.id === id && item.quantity > 1) {
+        return { ...item, quantity: item.quantity - 1 };
       }
       return item;
     });
+
     localStorage.setItem("cart", JSON.stringify(updatedCart));
+    setCartItems(updatedCart);
   };
 
   return (
@@ -63,15 +68,13 @@ function CartDropdown({ cartItems, onRemove }) {
               <div className="cartManageProduct">
                 <div className="quantity-control">
                   <button onClick={() => decreaseQuantity(item.id)}>-</button>
-                  <span>
-                    {quantities.find((q) => q.id === item.id)?.quantity || 1}
-                  </span>
+                  <span>{item.quantity}</span>
                   <button onClick={() => increaseQuantity(item.id)}>+</button>
                 </div>
                 <span className="price">x ${item.cost}</span>
                 <button
                   onClick={() => {
-                    onRemove(item.id);
+                    removeProduct(item.id);
                   }}
                 >
                   <span>x</span>
@@ -81,10 +84,16 @@ function CartDropdown({ cartItems, onRemove }) {
           </div>
         ))
       )}
-      <div className="cart-footer">
-        <div>{totalQuantity} product(s) in cart</div>
-        <div>Total Price: ${totalPrice.toFixed(2)}</div>
-        <Link to="/cart">Go to Cart</Link>
+      <div className="cartDropdownFooter">
+        <div className="cartDropdownTotalQuantity">
+          <p>{totalQuantity} product(s) in cart</p>
+        </div>
+        <div className="cartDropdownTotalPrice">
+          <p>Total Price: ${totalPrice.toFixed(2)}</p>
+        </div>
+        <div className="cartDropdownGoToCart">
+          <Link to="/cart">Go to Cart</Link>
+        </div>
       </div>
     </div>
   );

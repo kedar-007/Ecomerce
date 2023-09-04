@@ -97,6 +97,8 @@ a{
     visibility: hidden;
     opacity: 0;
     font-size: 16px;
+    font-weight: 500;
+    justify-content: space-between;
 }
 
 .cart-dropdown h3{
@@ -127,6 +129,7 @@ a{
     background: transparent;
     border: none;
     font-size: 22px;
+    cursor: pointer;
 }
 
 .cartManageProduct{
@@ -140,10 +143,47 @@ a{
     background-color: transparent;
     border: none;
     font-size: 22px;
-    font-weight: bold;
+    font-weight: 600;
+    cursor: pointer;
+color: #B88E2F;
 }
 
 .cartManageProduct button{
     background-color: transparent;
     border: none;
+}
+
+.cartDropdownFooter{
+    padding-top: 1vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-top: solid 1px #9d9d9d;
+    text-align: center;
+}
+
+.cartDropdownTotalQuantity p{
+    margin-top: 0.3vh;
+}
+
+.cartDropdownTotalPrice p, .cartDropdownGoToCart p{
+    margin-top: 0;
+}
+
+.cartDropdownGoToCart{
+    padding-top: 0.8vh;
+    padding-bottom: 0.8vh;
+    background-color: #B88E2F;
+    color: white;
+    cursor: pointer;
+    border: #B88E2F solid 1px;
+    font-weight: 600;
+}
+
+.cartDropdownGoToCart:hover{
+
+    background-color: transparent;
+    color: #B88E2F;
+    cursor: pointer;
+    border: #B88E2F solid 1px;
 }

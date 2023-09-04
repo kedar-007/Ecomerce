@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-function ProductColors({ colors }) {
-  const [selectedColor, setSelectedColor] = useState(null);
-
+function ProductColors({ colors, selectedColor, setSelectedColor }) {
   return (
     <div>
       <p style={{ color: "#9F9F9F" }}>Colors</p>
