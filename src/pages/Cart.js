@@ -56,11 +56,11 @@ function Cart() {
               </p>
             </div>
           </div>
-          <div className="checkoutBtn">
-            <Link to={"/checkout"}>
+          <Link to={"/checkout"}>
+            <div className="checkoutBtn">
               <button className="checkoutButton">Check Out</button>
-            </Link>
-          </div>
+            </div>{" "}
+          </Link>
         </div>
       </div>
       <WarrantyBanner />

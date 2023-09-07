@@ -1,5 +1,7 @@
 .product-card {
-    width: 22vw;
+    width: 20vw;
+    min-width: 300px;
+    height: 440px;
     border: 1px solid #e0e0e0;
     border-radius: 5px;
     overflow: hidden;
@@ -14,9 +16,10 @@
 }
 
 .product-card img {
-    width: 100%;
-    height: auto;
-    display: block;
+    width: 100%; /* take the full width of the card */
+  height: 70%; /* take the full height of the card */
+  object-fit: cover; /* this will zoom and crop the image to fit the dimensions */
+  object-position: center; /* this will center the image */
 }
 
 .product-card .product-info {
@@ -90,8 +93,17 @@ color: #9F9F9F;
 font-size: 22px;
 }
 
+.productPicture{
+   width: 40%;
+   height: 600px; 
+   overflow: hidden;
+   border-radius: 10px;
+}
 .productPicture img{
-    border-radius: 10px;
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
 }
 
 .productPrice{
@@ -133,4 +145,28 @@ font-size: 22px;
     font-size: 30px;
     font-weight: bold;
     text-align: center;
+}
+
+@media (max-width: 768px) {
+    .productDetails{
+        width: 95%;
+        flex-direction: column;
+        margin-right: 2.5%;
+        margin-left: 2.5%;
+    }
+
+    .productPicture{
+        width: 100%;
+        height: 40vh;
+    }
+
+    .productRefs{
+        margin-left: 2.5%;
+    }
+
+    .relatedProductsContainer{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }

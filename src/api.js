@@ -9,7 +9,7 @@ export const products = [
     tags: ["vintage", "leather", "classic"],
     rating: 4,
     description: "A classic leather sofa, perfect for any living room.",
-    picture: "https://via.placeholder.com/500",
+    picture: require("../src/assets/classicsofa.jpg"),
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ export const products = [
     tags: ["modern", "minimalistic"],
     rating: 4.5,
     description: "A modern chair with a minimalistic design.",
-    picture: "https://via.placeholder.com/500",
+    picture: require("../src/assets/modernchair.jpg"),
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ export const products = [
     tags: ["wooden", "dining"],
     rating: 5,
     description: "A sturdy wooden dining table.",
-    picture: "https://via.placeholder.com/500",
+    picture: require("../src/assets/diningtable.jpg"),
   },
   {
     id: 4,
@@ -45,7 +45,7 @@ export const products = [
     tags: ["queen-size", "comfortable"],
     rating: 4.7,
     description: "A queen-sized bed for ultimate relaxation.",
-    picture: "https://via.placeholder.com/500",
+    picture: require("../src/assets/queenbed.jpg"),
   },
   {
     id: 5,
@@ -57,7 +57,7 @@ export const products = [
     tags: ["luxury", "plush"],
     rating: 4.9,
     description: "A sofa that defines luxury.",
-    picture: "https://via.placeholder.com/500",
+    picture: require("../src/assets/luxurysofa.jpg"),
   },
   {
     id: 6,
@@ -69,7 +69,7 @@ export const products = [
     tags: ["elegant", "comfortable"],
     rating: 4.6,
     description: "An armchair designed for both comfort and elegance.",
-    picture: "https://via.placeholder.com/500",
+    picture: require("../src/assets/elegantarmchair.jpg"),
   },
   {
     id: 7,
@@ -81,7 +81,7 @@ export const products = [
     tags: ["round", "modern"],
     rating: 4.3,
     description: "A modern round table perfect for coffee and conversations.",
-    picture: "https://via.placeholder.com/500",
+    picture: require("../src/assets/roundcoffeetable.jpg"),
   },
   {
     id: 8,
@@ -93,7 +93,7 @@ export const products = [
     tags: ["king-size", "spacious"],
     rating: 5,
     description: "Sleep like royalty in this spacious king-size bed.",
-    picture: "https://via.placeholder.com/500",
+    picture: require("../src/assets/kingsizebed.jpg"),
   },
   {
     id: 9,
@@ -105,7 +105,7 @@ export const products = [
     tags: ["minimalist", "sleek"],
     rating: 4.4,
     description: "A sleek and minimalist sofa for modern homes.",
-    picture: "https://via.placeholder.com/500",
+    picture: require("../src/assets/minimalistsofa.jpg"),
   },
   {
     id: 10,
@@ -117,7 +117,7 @@ export const products = [
     tags: ["bar", "tall"],
     rating: 4.1,
     description: "A tall stool perfect for bar counters.",
-    picture: "https://via.placeholder.com/500",
+    picture: require("../src/assets/barstool.jpg"),
   },
   {
     id: 11,
@@ -129,11 +129,11 @@ export const products = [
     tags: ["retro", "compact"],
     rating: 4.5,
     description: "A compact loveseat with a touch of the retro era.",
-    picture: "https://via.placeholder.com/500",
+    picture: require("../src/assets/retroloveseat.jpg"),
   },
   {
     id: 12,
-    name: "Ceramic Side Table",
+    name: "Side Table",
     cost: 280,
     category: "table",
     colors: ["cerulean", "white"],
@@ -141,7 +141,7 @@ export const products = [
     tags: ["ceramic", "glossy"],
     rating: 4.2,
     description: "A glossy ceramic side table to elevate your room decor.",
-    picture: "https://via.placeholder.com/500",
+    picture: require("../src/assets/sidetable.jpg"),
   },
   {
     id: 13,
@@ -153,7 +153,7 @@ export const products = [
     tags: ["canopy", "elegant"],
     rating: 4.9,
     description: "Elevate your bedroom with this elegant canopy bed.",
-    picture: "https://via.placeholder.com/500",
+    picture: require("../src/assets/canopybed.jpg"),
   },
   {
     id: 14,
@@ -165,7 +165,7 @@ export const products = [
     tags: ["adjustable", "ergonomic"],
     rating: 4.8,
     description: "Stay comfortable with this ergonomic adjustable desk chair.",
-    picture: "https://via.placeholder.com/500",
+    picture: require("../src/assets/adjustabledeskchair.jpg"),
   },
   {
     id: 15,
@@ -178,7 +178,7 @@ export const products = [
     rating: 4.7,
     description:
       "A modern glass dining table for sophisticated dining experiences.",
-    picture: "https://via.placeholder.com/500",
+    picture: require("../src/assets/glasstable.jpg"),
   },
   {
     id: 16,
@@ -190,7 +190,7 @@ export const products = [
     tags: ["recliner", "leather", "comfort"],
     rating: 4.8,
     description: "A plush leather recliner designed for ultimate relaxation.",
-    picture: "https://via.placeholder.com/500",
+    picture: require("../src/assets/leatherrecliner.jpg"),
   },
   {
     id: 17,
@@ -202,7 +202,7 @@ export const products = [
     tags: ["nesting", "wood", "space-saving"],
     rating: 4.6,
     description: "Set of 2 nesting end tables, perfect for compact spaces.",
-    picture: "https://via.placeholder.com/500",
+    picture: require("../src/assets/nestingtables.jpg"),
   },
   {
     id: 18,
@@ -214,7 +214,7 @@ export const products = [
     tags: ["four-poster", "majestic", "wood"],
     rating: 5,
     description: "A majestic four-poster bed made of high-quality wood.",
-    picture: "https://via.placeholder.com/500",
+    picture: require("../src/assets/fourposterbed.jpg"),
   },
   {
     id: 19,
@@ -227,7 +227,7 @@ export const products = [
     rating: 4.4,
     description:
       "A convertible futon, perfect for guests and small apartments.",
-    picture: "https://via.placeholder.com/500",
+    picture: require("../src/assets/convertiblefuton.jpg"),
   },
   {
     id: 20,
@@ -240,6 +240,6 @@ export const products = [
     rating: 4.2,
     description:
       "A metal swivel stool with a modern twist for bars and counters.",
-    picture: "https://via.placeholder.com/500",
+    picture: require("../src/assets/swivelbarstool.jpg"),
   },
 ];

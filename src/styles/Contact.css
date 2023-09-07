@@ -109,7 +109,7 @@
     background-color: #B88B2F;
     width: 40%;
     -webkit-box-shadow: 2px 3px 6px -4px #000000; 
-    box-shadow: 5px 4px 7px -4px #000000;
+    box-shadow: 5px 4px 7px -6px #000000;
     border-radius: 5px;
     font-weight: 600;
     padding-top: 2vh;
@@ -117,4 +117,17 @@
     padding-right: 2vh;
     padding-bottom: 2vh;
     cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+    .contactTitles{
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 90%;
+    }
+
+    .contactForm{
+        width: 85%;
+    }
 }

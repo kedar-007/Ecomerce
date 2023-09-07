@@ -91,9 +91,9 @@ function CartDropdown() {
         <div className="cartDropdownTotalPrice">
           <p>Total Price: ${totalPrice.toFixed(2)}</p>
         </div>
-        <div className="cartDropdownGoToCart">
-          <Link to="/cart">Go to Cart</Link>
-        </div>
+        <Link to="/cart">
+          <div className="cartDropdownGoToCart">Go to Cart</div>
+        </Link>
       </div>
     </div>
   );

@@ -83,13 +83,17 @@
 }
 
 .cartItem img{
-    width: 15%;
+    width: 30%;
     height: auto;
+    border-radius: 5px;
 }
 
 .cartSection{
     display: flex;
     align-items: center;
+    margin-top: 7vh;
+    margin-bottom: 7vh;
+    flex-wrap: wrap;
 }
 
 .subtotal span{
@@ -112,9 +116,20 @@
     padding-right: 50px;
     padding-left: 50px;
     font-size: 20px;
+    scale: 1.00;
+    transition: all 250ms;
+    cursor: pointer;
 }
 .checkoutBtn{
     width: 100%;
     display: flex;
     justify-content: center;
+    
+}
+
+.checkoutBtn button:hover{
+    scale: 1.05;
+    transition: all 250ms;
+    border: solid 1px #B88E2F;
+    color: #B88E2F;
 }

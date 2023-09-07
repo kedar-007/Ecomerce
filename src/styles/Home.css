@@ -56,10 +56,22 @@ box-shadow: 5px 5px 30px 5px rgba(0,0,0,0.2);
     height: 80vh;
 }
 
+.categoriesCarousel h3{
+    color: black;
+}
+
 .living, .dining, .bedroom{
     width: 25%;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
+    transition: all 250ms;
+    scale: 1;
+}
+
+.living:hover, .dining:hover, .bedroom:hover{
+    transition: all 250ms;
+    scale: 1.04;
 }
 
 .diningImg{
@@ -244,4 +256,109 @@ h3{
 
 .animateImage {
     animation: fadeInGrow 2s forwards;
+}
+
+@media (max-width: 768px) {
+
+    .banner{
+        height: 35vh;
+    }
+    .banner h2{
+        font-size: 36px
+    }
+    .banner p{
+        display: none;
+    }
+
+    .btnDiv{
+        display: flex;
+        justify-content: center;
+        height: 50px;
+    }
+
+    .newCollectionBanner{
+        gap: 10px;
+        padding-top: 2vh;
+        padding-bottom: 3vh;
+        padding-left: 6vw;
+        padding-right: 6vw;
+        width: 80%;
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
+
+    .categoriesCarousel{
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+    }
+    .dining, .living, .bedroom{
+        width: 100%;
+    }
+
+    .livingImg, .diningImg, .bedroomImg{
+        width: 95%;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+        height: 25vh;
+        -webkit-box-shadow: 5px 5px 15px -2px rgba(0,0,0,0.50); 
+        box-shadow: 5px 5px 15px -2px rgba(0,0,0,0.50);
+    }
+
+    .livingTitle, .diningTitle, .bedroomTitle{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        
+    }
+
+    .livingTitle h3, .diningTitle h3, .bedroomTitle h3{
+        color: white;
+        font-size: 34px;
+        text-shadow: 2px 2px 9px rgba(0,0,0,0.80);
+    }
+
+    .bottomHomeBanner{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: auto;
+    }
+
+    .bottomBannerText{
+        width: 95%;
+        padding-left: 2.5vw;
+        padding-right: 2.5vw;
+    }
+
+    .bottomBannerImage{
+        width: 97.5%;
+        height: 50vh;
+        margin-top: 5vh;
+        padding: 0;
+        padding-bottom: 2.5vh;
+        padding-left: 2.5%;
+    }
+
+    .bottomBannerCarousel{
+        margin-top: 5vh;
+        width: 100%;
+        height: 60vh;
+    }
+
+    .gallery{
+        flex-direction: column;
+    }
+    
+    .col2, .col3, .col4, .col5{
+        display: none;
+    }
+
+    .col1{
+        width: 100%;
+    }
 }

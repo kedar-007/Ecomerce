@@ -182,6 +182,7 @@
     padding-bottom: 12vh;
     padding-left: 5vw;
     padding-right: 5vw;
+    flex-wrap: wrap;
   }
 
   .highQuality, .warrantyProtection, .freeShipping, .support{
@@ -208,3 +209,33 @@
     color: #898989;
   }
 
+  @media (max-width: 768px) {
+    .filter-container{
+      flex-wrap: wrap;
+    }
+
+    .showingProducts{
+      display: none;
+    }
+
+    .showCounter{
+      display: none;
+    }
+
+    .page-button{
+      padding: 2vh 6vw;
+    }
+
+    .servicesBanner{
+      padding-top: 4vh;
+      padding-bottom: 4vh;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .highQuality, .warrantyProtection, .freeShipping, .support{
+      flex-direction: column;
+      text-align: center;
+    }
+}

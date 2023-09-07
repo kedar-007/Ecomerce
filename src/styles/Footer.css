@@ -4,6 +4,7 @@
   display: flex;
   justify-content: space-between;
   border-top: 1px solid rgba(185, 185, 185, 0.856);
+  flex-wrap: wrap;
 }
 
 .footerAddress{
@@ -21,6 +22,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    flex-wrap: wrap;
 }
 
 .footer li, .footer ul{
@@ -56,11 +58,13 @@
 .footerNewsletter{
     width: 35%;
     display: flex;
+    overflow: hidden;
 }
 
 .footerNewsletterInput{
     display: flex;
     gap: 1vw;
+    flex-wrap: wrap;
 }
 
 .footerNewsletterInput p{
@@ -82,4 +86,39 @@
     display: flex;
     margin: auto;
     border-top: 1px solid rgba(185, 185, 185, 0.856);
+}
+
+@media (max-width: 768px) {
+    .footer{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+        width: 100%;
+    }
+
+    .footerAddress{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .footer h3{
+        margin-bottom: 0;
+    }
+
+    .footerLinks{
+        display: none;
+    }
+
+    .footerHelp{
+        width: 100%;
+    }
+
+    .footerNewsletter{
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 5vh;
+    }
 }
