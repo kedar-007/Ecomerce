@@ -2,7 +2,7 @@
   "name": "furniro",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://alexdsv.github.io/furniro",
+  "homepage": "https://alexdsv.github.io/furniro/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
