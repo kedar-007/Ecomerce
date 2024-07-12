@@ -35,12 +35,11 @@ function Footer() {
           <p>Newsletter</p>
           <div className="footerNewsletterInput">
             <input type="text" placeholder="Enter Your Email Address"></input>
-            <p>SUBSCRIBE</p>
           </div>
         </div>
       </div>
       <div className="rightReserved">
-        <p>2023 furniro. All rights reserved</p>
+        <p>2024 furniro. All rights reserved Akanksha Pisal</p>
       </div>
     </div>
   );

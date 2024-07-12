@@ -6,7 +6,6 @@ const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState(initialCartItems);
 
   const addProduct = (product) => {
-    // Check if the product with same attributes already exists in the cart
     const existingProductIndex = cartItems.findIndex(
       (item) =>
         item.id === product.id &&

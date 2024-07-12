@@ -4,7 +4,6 @@ import { products } from "../api";
 import ProductCard from "../components/ProductCard";
 import WarrantyBanner from "../components/WarrantyBanner";
 function Shop() {
-  // State to control burger menu visibility
   const [isMenuVisible, setIsMenuVisible] = useState(false);
 
   const [shownProducts, setShownProducts] = useState(16);

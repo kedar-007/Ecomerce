@@ -10,11 +10,8 @@ import ProductCard from "../components/ProductCard";
 function Product() {
   const { id } = useParams();
   const product = products.find((p) => p.id === parseInt(id));
-  // If the product has sizes, set the first size as default, otherwise null
   const defaultSize =
     product && product.size && product.size.length > 0 ? product.size[0] : null;
-
-  // If the product has colors, set the first color as default, otherwise null
   const defaultColor =
     product && product.colors && product.colors.length > 0
       ? product.colors[0]
